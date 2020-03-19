@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app dark shrink-on-scroll prominent>
+    <v-app-bar app dark shrink-on-scroll prominent scroll-threshold="10">
       <v-container fluid class="pt-1" style="overflow:hidden;max-height:100%">
         <v-row>
           <div class="d-flex align-center">
@@ -52,6 +52,15 @@
     <v-footer app> </v-footer>
   </v-app>
 </template>
+
+<script>
+export default {
+  created() {
+    this.$vuetify.theme.dark = true
+  }
+}
+</script>
+
 <style lang="scss">
 .rounded {
   border-radius: 25%;

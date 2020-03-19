@@ -1,0 +1,50 @@
+{
+  "台南": [
+    {
+      "name": "丁守中",
+      "party": "国民党",
+      "city": "台北市",
+      "relations": ["柯文哲"],
+      "policies": ["Policy 1", "Policy 2", "Policy 3"]
+    },
+    {
+      "name": "柯文哲",
+      "party": "国民党",
+      "city": "台北市",
+      "relations": ["丁守中"],
+      "policies": ["Policy 1", "Policy 2", "Policy 3"]
+    }
+  ],
+  "台北": [
+    {
+      "name": "丁守中",
+      "party": "国民党",
+      "city": "台北市",
+      "relations": ["柯文哲"],
+      "policies": ["Policy 1", "Policy 2", "Policy 3"]
+    },
+    {
+      "name": "柯文哲",
+      "party": "国民党",
+      "city": "台北市",
+      "relations": ["丁守中"],
+      "policies": ["Policy 1", "Policy 2", "Policy 3"]
+    }
+  ],
+  "台中": [
+    {
+      "name": "丁守中",
+      "party": "国民党",
+      "city": "台北市",
+      "relations": ["柯文哲"],
+      "policies": ["Policy 1", "Policy 2", "Policy 3"]
+    },
+    {
+      "name": "柯文哲",
+      "party": "国民党",
+      "city": "台北市",
+      "relations": ["丁守中"],
+      "policies": ["Policy 1", "Policy 2", "Policy 3"]
+    }
+  ]
+}

@@ -51,13 +51,15 @@ export default {
     setTimeout(this.initTimer,1000)
   },
   methods: {
-    onMouseLeave(){
+    onMouseLeave(event){
+      event.preventDefault()
       this.moving=false
       this.isDown=false
       console.log('Leave', this.isDown)
       setTimeout(this.initTimer,1000)
     },
-    onMouseUp() {
+    onMouseUp(event) {
+      event.preventDefault()
       this.isDown = false
       console.log('Up', this.isDown)
       setTimeout(this.initTimer,1000)
@@ -70,6 +72,7 @@ export default {
       console.log(this.timer)
       clearInterval(this.timer)
       this.timer=undefined
+      event.preventDefault()
     },
     initTimer() {
       this.isDown = false
@@ -87,6 +90,7 @@ export default {
     },
     move(event, index) {
       console.log('Over')
+      event.preventDefault()
       if (this.isDown) {
         this.moving = true
         const x =

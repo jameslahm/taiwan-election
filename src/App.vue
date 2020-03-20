@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app dark>
+    <v-app-bar app dark id="documentation-app-bar">
       <!-- <v-container fluid class="pt-1" style="overflow:hidden;max-height:100%">
         <v-row> -->
       <div class="d-flex align-center">
@@ -18,9 +18,8 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
+      <Search></Search>
+      
 
       <v-btn icon>
         <v-icon>mdi-heart</v-icon>
@@ -64,11 +63,15 @@
 </template>
 
 <script>
+import Search from './components/Search'
 export default {
   data() {
     return {
       isDropDown: false
     }
+  },
+  components:{
+    Search
   },
   methods: {},
   created() {

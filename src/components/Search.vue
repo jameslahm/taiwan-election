@@ -1,7 +1,7 @@
 <template>
   <v-responsive
-    class="mr-0 mr-md-6 hidden-xs-only transition-swing"
-    :max-width="isFocused ? 300 : 250"
+    class="mr-0 mr-md-6 hidden-xxs-only transition-swing"
+    :max-width="isFocused ? 300 : 200"
   >
     <v-text-field
       id="search"
@@ -18,20 +18,22 @@
       @blur="onBlur"
       @focus="onFocus"
       @keydown.esc="onEsc"
+      @keydown.enter="onEnter"
     />
   </v-responsive>
 </template>
 
 
 <script>
+import data from '../assets/data/data'
+
   export default {
-    name: 'DocumentationSearch',
+    name: 'Search',
 
     data: () => ({
-      docSearch: {},
       isFocused: false,
       isSearching: false,
-      label: 'Search ("/" to focus)',
+      label: 'Search',
       search: '',
       timeout: null,
     }),
@@ -48,63 +50,27 @@
       },
       search (val) {
         if (val) return
-
-        this.docSearch.autocomplete.autocomplete.close()
-        this.docSearch.autocomplete.autocomplete.setVal('')
       },
     },
 
     mounted () {
-      document.onkeydown = e => {
-        e = e || window.event
-
-        if (
-          e.key === '/' &&
-          e.target !== this.$refs.search.$refs.input
-        ) {
-          e.preventDefault()
-
-          this.$refs.search.focus()
-        }
-      }
-
-      import(
-        /* webpackChunkName: "docsearch" */
-        'docsearch.js/dist/cdn/docsearch.min.css'
-      )
-      import(
-        /* webpackChunkName: "docsearch" */
-        'docsearch.js'
-      ).then(this.init)
     },
-
-    beforeDestroy () {
-      document.onkeydown = null
-
-      this.docSearch.autocomplete.autocomplete.close()
-      this.docSearch.autocomplete.autocomplete.setVal('')
-    },
-
     methods: {
-      init ({ default: docsearch }) {
-        const vm = this
-
-        this.docSearch = docsearch({
-            apiKey: '25626fae796133dc1e734c6bcaaeac3c',
-            indexName: 'docsearch',
-          autocompleteOptions: {
-            appendTo: '#documentation-app-bar',
-            autoselect: true,
-            clearOnSelected: true,
-            hint: false,
-            debug: process.env.NODE_ENV === 'development',
-          },
-          handleSelected (input, event, suggestion) {
-            vm.$router.push(suggestion.url.split('.com').pop())
-            vm.resetSearch(400)
-          },
-          inputSelector: '#search',
+      onEnter(){
+        console.log(data,this.search)
+        const res=data.filter(v=>{
+          return v.name===this.search
         })
+        console.log(res)
+        if(res.length===0){
+          this.$message({
+            type:'error',
+            message:'No Person'
+          })
+        }
+        else{
+          this.$router.push(`/person/${res[0].id}`)
+        }
       },
       onBlur () {
         this.resetSearch()

@@ -1,26 +1,23 @@
 <template>
 <div>
   <!-- <div class="mt-5 pt-5" style="height:10vh"></div> -->
-  <MapController></MapController>
-  <people-controller></people-controller>
+  <Map></Map>
 </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import MapController from '../components/MapController'
-import PeopleController from '../components/PersonController/PersonController'
+import Map from '../components/Map'
 
 export default {
   name: 'home',
   components: { 
-    MapController ,
-    PeopleController
+    Map ,
   },
   methods: {
     clicked() {
       console.log('Clicked!')
     }
-  }
+  },
 }
 </script>

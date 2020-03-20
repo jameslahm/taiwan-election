@@ -1,25 +1,14 @@
 <template>
-  <svg height="100%" width=100%>
-    <image v-if="year" href="../assets/2018.svg" width="100%" height="100%" />
-    <rect
-      class="rect"
-      opacity="0"
-      y="0%"
-      @click="$emit('select', '台北')"
-    ></rect>
-    <rect
-      class="rect"
-      opacity="0"
-      y="33%"
-      @click="$emit('select', '台中')"
-    ></rect>
-    <rect
-      class="rect"
-      opacity="0"
-      y="66%"
-      @click="$emit('select', '台南')"
-    ></rect>
-  </svg>
+  <v-container style="width:100%;height:100vh">
+    <v-img
+      ref="map"
+      contain
+      src="../assets/2018.svg"
+      width="100%"
+      height="100%"
+      @click="selectArea"
+    />
+  </v-container>
 </template>
 
 <script>
@@ -34,6 +23,23 @@ export default {
     }
   },
   methods: {
+    showPerson(n){
+      console.log(n)
+      
+    },
+    selectArea(event) {
+      console.log(event.offsetX / this.$refs.map.$el.offsetWidth)
+      if (
+        event.offsetX / this.$refs.map.$el.offsetWidth > 0.4 &&
+        event.offsetX / this.$refs.map.$el.offsetWidth < 0.7
+      ) {
+        if (event.offsetY / this.$refs.map.$el.offsetHeight < 0.33)
+          this.showPerson(0)
+        else if (event.offsetY / this.$refs.map.$el.offsetHeight < 0.66)
+          this.showPerson(1)
+        else this.showPerson(2)
+      }
+    },
     /**
      * Show the map according to the year given.
      * @param {number} year
@@ -44,3 +50,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.rect {
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>

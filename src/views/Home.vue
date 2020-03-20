@@ -1,9 +1,7 @@
 <template>
 <div>
-
-  <v-container fluid style="height:80vh" class="mt-5">
+  <!-- <div class="mt-5 pt-5" style="height:10vh"></div> -->
   <MapController></MapController>
-  </v-container>
 </div>
 </template>
 

@@ -1,8 +1,6 @@
 <template>
-<div>
-  <!-- <div class="mt-5 pt-5" style="height:10vh"></div> -->
-  <Map></Map>
-</div>
+    <!-- <div class="mt-5 pt-5" style="height:10vh"></div> -->
+    <Map></Map>
 </template>
 
 <script>
@@ -11,13 +9,16 @@ import Map from '../components/Map'
 
 export default {
   name: 'home',
-  components: { 
-    Map ,
+  data() {
+    return {}
+  },
+  components: {
+    Map
   },
   methods: {
     clicked() {
       console.log('Clicked!')
     }
-  },
+  }
 }
 </script>

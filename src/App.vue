@@ -1,9 +1,13 @@
 <template>
   <v-app>
-    <v-app-bar app dark >
+    <v-app-bar app>
       <!-- <v-container fluid class="pt-1" style="overflow:hidden;max-height:100%">
         <v-row> -->
-      <div class="d-flex align-center d-flex-shrink-0" @click="goHome" style="cursor:pointer">
+      <div
+        class="d-flex align-center d-flex-shrink-0"
+        @click="goHome"
+        style="cursor:pointer"
+      >
         <v-img
           alt="Vuetify Logo"
           class="shrink mr-2 rounded"
@@ -13,17 +17,17 @@
           width="30"
           round
         />
-        <span class="body-1">TaiWan Election</span>
+        <!-- <span class="body-1">TaiWan Election</span> -->
       </div>
 
       <v-spacer></v-spacer>
 
-      <Search></Search>
-    
+      <Search ref="search"></Search>
+
       <!-- </v-row> -->
 
       <!-- </v-container> -->
-      <template v-slot:extension>
+      <!-- <template v-slot:extension>
         <v-tabs align-with-title>
           <v-tab>2014</v-tab>
           <v-tab>2015</v-tab>
@@ -35,21 +39,9 @@
         <v-icon v-else @click="isDropDown = !isDropDown" large
           >mdi-chevron-up</v-icon
         >
-      </template>
+      </template> -->
     </v-app-bar>
     <v-content>
-      <v-container fluid>
-      <v-expand-transition>
-        <p v-if="isDropDown" class="text-justify elevation-20 body-1">
-          Lorem Ipsum，也称乱数假文或者哑元文本，
-          是印刷及排版领域所常用的虚拟文字。由于曾经一台匿名的打印机刻意打乱了一盒印刷字体从而造出一本字体样品书，Lorem
-          Ipsum从西元15世纪起就被作为此领域的标准文本使用。它不仅延续了五个世纪，还通过了电子排版的挑战，其雏形却依然保存至今。在1960年代，”Leatraset”公司发布了印刷着Lorem
-          Ipsum段落的纸张，从而广泛普及了它的使用。最近，计算机桌面出版软件”Aldus
-          PageMaker”也通过同样的方式使Lorem Ipsum落入大众的视野。
-        </p>
-      </v-expand-transition>
-        
-      </v-container>
       <router-view></router-view>
     </v-content>
 
@@ -64,6 +56,8 @@ export default {
     return {
       isDropDown: false
     }
+  },
+  computed:{
   },
   components:{
     Search

@@ -25,7 +25,6 @@
 
 
 <script>
-import data from '../assets/data/data'
 
   export default {
     name: 'Search',
@@ -57,16 +56,16 @@ import data from '../assets/data/data'
     },
     methods: {
       onEnter(){
-        console.log(data,this.search)
-        const res=data.filter(v=>{
+        console.log(this.$store.state.persons,this.search)
+        const res=this.$store.state.persons.filter(v=>{
           return v.name===this.search
         })
         console.log(res)
         if(res.length===0){
-          this.$message({
-            type:'error',
-            message:'No Person'
-          })
+          // this.$message({
+          //   type:'error',
+          //   message:'No Person'
+          // })
         }
         else{
           this.$router.push(`/person/${res[0].id}`)
@@ -80,8 +79,8 @@ import data from '../assets/data/data'
       },
       onFocus () {
         clearTimeout(this.timeout)
-
         this.isFocused = true
+        if(this.$route.path!='/search') this.$router.push('/search')
       },
       resetSearch (timeout = 0) {
         clearTimeout(this.timeout)

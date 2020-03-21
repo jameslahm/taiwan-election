@@ -1,36 +1,35 @@
 <template>
-  <v-container style="width:100%;height:100vh;">
+  <v-container
+    style="width:100%;height:60vh;"
+    class="mt-5"
+    @click="overlay = !overlay"
+  >
     <v-img
-      ref="map"
       contain
       src="../assets/2018.svg"
-      width="100%"
-      height="100%"
-      class="elevation-1"
+      width="80%"
+      height="80%"
+      class="mx-auto align-center mt-5"
     >
+    </v-img>
+    <v-overlay :value="overlay" absolute>
       <v-avatar
         ref="avatars"
         v-for="(person, index) in persons"
         :key="index"
         color="success"
-        v-bind:style="{ left: person.x + 'vw', top: person.y + 'vh' }"
+        v-bind:style="{ left: locations[index].x + 'vw', top: locations[index].y + 'vh' }"
         @click="navigateToPerson(index)"
-        style="cursor:pointer;"
-        @mousedown="onMouseDown"
-        @mousemove="move($event, index)"
-        @mouseup="onMouseUp"
-        @mouseleave="onMouseLeave"
+        style="cursor:pointer;position:fixed"
         size="62"
       >
         <img :src="'/img/' + index + '.svg'" />
       </v-avatar>
-    </v-img>
+    </v-overlay>
   </v-container>
 </template>
 
 <script>
-import data from '../assets/data/data'
-
 export default {
   name: 'Map',
   data: function() {
@@ -39,77 +38,85 @@ export default {
        * @type {Number} the selected year
        */
       year: 2018,
-      persons: [],
       isDown: false,
       timer: undefined,
       mouseX: 0,
       mouseY: 0,
-      moving: false
+      moving: false,
+      overlay: false,
+      locations:[
+
+      ]
+    }
+  },
+  computed:{
+    persons(){
+      return this.$store.state.persons
     }
   },
   mounted() {
-    setTimeout(this.initTimer,1000)
+    // setTimeout(this.initTimer,1000)
   },
   methods: {
-    onMouseLeave(event){
-      event.preventDefault()
-      this.moving=false
-      this.isDown=false
-      console.log('Leave', this.isDown)
-      setTimeout(this.initTimer,1000)
-    },
-    onMouseUp(event) {
-      event.preventDefault()
-      this.isDown = false
-      console.log('Up', this.isDown)
-      setTimeout(this.initTimer,1000)
-    },
-    onMouseDown(event) {
-      this.isDown = true
-      this.mouseX = event.x
-      this.mouseY = event.y
-      console.log('Down', this.isDown)
-      console.log(this.timer)
-      clearInterval(this.timer)
-      this.timer=undefined
-      event.preventDefault()
-    },
-    initTimer() {
-      this.isDown = false
-      this.timer = setInterval(() => {
-        this.persons.forEach((v, index) => {
-          const x = v.x + Math.random() * 0.1 - 0.05
-          const y = v.y + Math.random() * 0.1 - 0.05
-          this.$set(
-            this.persons,
-            index,
-            Object.assign({}, this.persons[index], { x: x, y: y })
-          )
-        })
-      }, 100)
-    },
-    move(event, index) {
-      console.log('Over')
-      event.preventDefault()
-      if (this.isDown) {
-        this.moving = true
-        const x =
-          this.persons[index].x +
-          ((event.x - this.mouseX) / window.innerWidth) * 100
-        const y =
-          this.persons[index].y +
-          ((event.y - this.mouseY) / window.innerHeight) * 100
-        console.log(x, y)
-        console.log(this.persons[index].x)
-        this.$set(
-          this.persons,
-          index,
-          Object.assign({}, this.persons[index], { x: x, y: y })
-        )
-        this.mouseX = event.x
-        this.mouseY = event.y
-      }
-    },
+    // onMouseLeave(event){
+    //   event.preventDefault()
+    //   this.moving=false
+    //   this.isDown=false
+    //   console.log('Leave', this.isDown)
+    //   setTimeout(this.initTimer,1000)
+    // },
+    // onMouseUp(event) {
+    //   event.preventDefault()
+    //   this.isDown = false
+    //   console.log('Up', this.isDown)
+    //   setTimeout(this.initTimer,1000)
+    // },
+    // onMouseDown(event) {
+    //   this.isDown = true
+    //   this.mouseX = event.x
+    //   this.mouseY = event.y
+    //   console.log('Down', this.isDown)
+    //   console.log(this.timer)
+    //   clearInterval(this.timer)
+    //   this.timer=undefined
+    //   event.preventDefault()
+    // },
+    // initTimer() {
+    //   this.isDown = false
+    //   this.timer = setInterval(() => {
+    //     this.persons.forEach((v, index) => {
+    //       const x = v.x + Math.random() * 0.1 - 0.05
+    //       const y = v.y + Math.random() * 0.1 - 0.05
+    //       this.$set(
+    //         this.persons,
+    //         index,
+    //         Object.assign({}, this.persons[index], { x: x, y: y })
+    //       )
+    //     })
+    //   }, 100)
+    // },
+    // move(event, index) {
+    //   console.log('Over')
+    //   event.preventDefault()
+    //   if (this.isDown) {
+    //     this.moving = true
+    //     const x =
+    //       this.persons[index].x +
+    //       ((event.x - this.mouseX) / window.innerWidth) * 100
+    //     const y =
+    //       this.persons[index].y +
+    //       ((event.y - this.mouseY) / window.innerHeight) * 100
+    //     console.log(x, y)
+    //     console.log(this.persons[index].x)
+    //     this.$set(
+    //       this.persons,
+    //       index,
+    //       Object.assign({}, this.persons[index], { x: x, y: y })
+    //     )
+    //     this.mouseX = event.x
+    //     this.mouseY = event.y
+    //   }
+    // },
     // showPerson(n) {
     //   console.log(n)
     // },
@@ -142,11 +149,13 @@ export default {
     }
   },
   created() {
-    this.persons = data
-    this.persons.forEach(v => {
-      v.x = Math.random() * 25 + 25
-      v.y = Math.random() * 70 + 10
-    })
+    for(let index=0;index<3;index++){
+      const x = 20 + (index % 2) * 30
+      const y =
+        20 +
+        Math.floor((index / 2) % 1 == 0.5 ? index / 2 - 0.5 : index / 2) * 20
+      this.locations.push({x,y})
+    }
   }
 }
 </script>

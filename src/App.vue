@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app>
+    <v-app-bar dark app>
       <!-- <v-container fluid class="pt-1" style="overflow:hidden;max-height:100%">
         <v-row> -->
       <div

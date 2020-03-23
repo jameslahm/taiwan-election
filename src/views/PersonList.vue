@@ -6,9 +6,9 @@
         :key="i"
         @click="navigateToPerson(i)"
       >
-        <!-- <v-list-item-avatar>
+        <v-list-item-avatar>
             <v-img :src="`/img/${item.id}.svg`"></v-img>
-          </v-list-item-avatar> -->
+          </v-list-item-avatar>
         <v-list-item-content>
           <v-list-item-title v-text="item.name"></v-list-item-title>
         </v-list-item-content>

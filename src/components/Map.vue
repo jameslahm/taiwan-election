@@ -1,6 +1,6 @@
 <template>
   <v-container
-    style="width:100%;height:60vh;"
+    style="width:100%;height:55vh;"
     class="mt-5"
     @click="overlay = !overlay"
   >

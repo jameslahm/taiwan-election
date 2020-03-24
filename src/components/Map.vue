@@ -12,7 +12,7 @@
       class="mx-auto align-center mt-5"
     >
     </v-img>
-    <v-overlay :value="overlay" absolute>
+    <v-overlay :value="overlay" absolute opacity="0.8">
       <v-avatar
         ref="avatars"
         v-for="(person, index) in persons"
@@ -23,9 +23,13 @@
         style="cursor:pointer;position:fixed"
         size="62"
       >
-        <img :src="'/img/' + index + '.svg'" />
+        <img :src="'/img/'+person.id+'.svg'" />
       </v-avatar>
+      <p class="fixed" v-for="(person,index) in persons" :key="'p'+index" :style="{ left: locations[index].x +2+ 'vw', top: locations[index].y+9 + 'vh' }">
+        {{person.name}}
+      </p>
     </v-overlay>
+    
   </v-container>
 </template>
 
@@ -164,5 +168,9 @@ export default {
 .rect {
   margin-left: auto;
   margin-right: auto;
+}
+
+.fixed{
+  position: fixed;
 }
 </style>

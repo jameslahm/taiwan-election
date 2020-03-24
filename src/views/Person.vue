@@ -1,18 +1,39 @@
 <template>
   <v-container>
     <v-card>
-      <v-img src="../assets/0.svg" aspect-ratio=1.0 max-height="15vh" contain ></v-img>
+      <v-img
+        :src="'/img'+id+'.svg'"
+        aspect-ratio="1.0"
+        max-height="15vh"
+        contain
+      ></v-img>
       <v-card-subtitle class="text-center">
-        {{person.name}}<br/>
-        {{person.enName}}
+        {{ person.name }}<br />
+        {{ person.enName }}
       </v-card-subtitle>
       <v-divider></v-divider>
       <v-card-text class="text-left">
-        <p class="mb-1">{{person.name}}</p>
-        <p>党派: {{person.party}}</p>
+        <p class="mb-1">{{ person.name }}</p>
+        <p>党派: {{ person.party }}</p>
         <p class="mb-1">个人经历:</p>
-        <p style="white-space:pre-line;line-height:2">{{person.experience}}</p>
+        <p style="white-space:pre-line;line-height:2">
+          {{ person.experience }}
+        </p>
       </v-card-text>
+      <v-divider></v-divider>
+      <v-row class="justify-center"
+        ><v-subheader>相关候选人</v-subheader></v-row
+      >
+      <v-card-actions class="ml-3">
+        <v-avatar
+          color="primary"
+          size="55"
+          class="mr-4"
+          v-for="(item, index) in relevantPersons"
+          :key="index"
+          ><v-img :src="'/img'+item.id+'.svg'"></v-img
+        ></v-avatar>
+      </v-card-actions>
     </v-card>
   </v-container>
 </template>
@@ -27,14 +48,17 @@ export default {
       messages: []
     }
   },
-  computed:{
-    person(){
+  computed: {
+    person() {
       return this.$store.getters.persons[this.id]
+    },
+    relevantPersons() {
+      return this.$store.state.persons.filter(v => {
+        return v.id !== parseInt(this.id)
+      })
     }
   },
-  mounted() {
-  },
-  created() {
-  }
+  mounted() {},
+  created() {}
 }
 </script>

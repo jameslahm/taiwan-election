@@ -3,12 +3,18 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import PersonList from '../views/PersonList.vue'
 import Person from '../views/Person.vue'
+import Welcome from '../views/Welcome.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path:'/',
+    name:'welcome',
+    component:Welcome
+  },
+  {
+    path: '/home',
     name: 'Home',
     component: Home
   },

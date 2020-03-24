@@ -3,19 +3,19 @@
   <div>
     <Map></Map>
     <v-container fluid
-      ><v-row class="justify-space-between mx-auto" style="height:5vh">
-        <v-subheader>2014</v-subheader>
-        <v-subheader>2020</v-subheader></v-row
       >
-      <v-row class="justify-center mx-auto" style="width:85vw"
+      <!-- <v-row class="justify-space-between mx-auto" style="height:5vh">
+        <v-subheader>2014</v-subheader>
+        <v-subheader>2020</v-subheader></v-row> -->
+      <v-row class="justify-center pt-5  mx-auto" style="width:75vw"
         ><v-slider
           class="text-center"
-          v-model="year"
           thumb-label="always"
-          min="2014"
+          min="2018"
           max="2020"
-          :thumb-size="60"
+          :thumb-size="55"
           thumb-color="success"
+          value="2019"
         >
           <template v-slot:thumb-label="{ value }">
             <p class="title mb-0">{{ value }}</p></template
@@ -23,10 +23,10 @@
         ></v-row
       >
       <p
-        class="text-left white--text primary mx-auto hello"
-        style="width:85vw;margin-top:-3vh;word-wrap:break-word"
+        class="white--text primary mx-auto hello px-4 pt-2"
+        style="width:80vw;word-wrap:break-word;margin-top:-0.6875rem"
       >
-        aslcnjdabchdlsacnsjdlkbcjsdhlkjcvshfbvfdvslcnjdabchdlsacnsjdlkbcjsdhlkjcvshfblcnjdabchdlsacnsjdlkbcjsdhlkjcvshfbvfdvslcnjdabchdlsacnsjdlkbcjsdhlkjcvshfb
+        哦我是我是哦我是哇的就爱上了暗淡撒旦看来你萨科三第六届立法的撒代码块记得那时空间
       </p></v-container
     >
   </div>
@@ -63,11 +63,11 @@ export default {
 .v-slider__thumb-label-container::after{
   content: '';
   display: block;
-  border-width: 10px;
+  border-width: 15px;
   border-style: solid;
   border-color: transparent transparent rgb(58, 135, 170) transparent;
-  left: -9px;
+  left: -0.903rem;
   position: relative;
-  top: -3px;
+  top: -0.1875rem;
 }
 </style>

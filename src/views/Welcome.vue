@@ -15,8 +15,18 @@
         未能达到那就路上看到你那就从拉萨的基础的阿巴斯绿茶说的不错的经历差不多了
     </p>
     <v-row class="justify-center mt-5">
-        <v-avatar color="black" size=55><v-icon size="45">mdi-chevron-down</v-icon></v-avatar>
+        <v-avatar @click="navigateToHome" style="cursor:pointer;" color="black" size=55><v-icon size="45">mdi-chevron-down</v-icon></v-avatar>
     </v-row>
   </v-container>
 </template>
+
+<script>
+export default {
+    methods:{
+        navigateToHome(){
+            this.$router.push('/home')
+        }
+    }
+}
+</script>
 

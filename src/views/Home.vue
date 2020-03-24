@@ -24,7 +24,7 @@
       >
       <p
         class="white--text primary mx-auto hello px-4 pt-2"
-        style="width:80vw;word-wrap:break-word;margin-top:-0.6875rem"
+        style="width:80vw;word-wrap:break-word;margin-top:-0.7010rem"
       >
         哦我是我是哦我是哇的就爱上了暗淡撒旦看来你萨科三第六届立法的撒代码块记得那时空间
       </p></v-container
@@ -65,7 +65,7 @@ export default {
   display: block;
   border-width: 15px;
   border-style: solid;
-  border-color: transparent transparent rgb(58, 135, 170) transparent;
+  border-color: transparent transparent #2196f3 transparent;
   left: -0.903rem;
   position: relative;
   top: -0.1875rem;

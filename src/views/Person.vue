@@ -2,7 +2,7 @@
   <v-container>
     <v-card>
       <v-img
-        :src="'/img'+id+'.svg'"
+        :src="'/img/'+id+'.svg'"
         aspect-ratio="1.0"
         max-height="15vh"
         contain
@@ -31,7 +31,9 @@
           class="mr-4"
           v-for="(item, index) in relevantPersons"
           :key="index"
-          ><v-img :src="'/img'+item.id+'.svg'"></v-img
+          style="cursor:pointer;"
+          @click="navigateToPerson(item)"
+          ><v-img :src="'/img/'+item.id+'.svg'"></v-img
         ></v-avatar>
       </v-card-actions>
     </v-card>
@@ -56,6 +58,11 @@ export default {
       return this.$store.state.persons.filter(v => {
         return v.id !== parseInt(this.id)
       })
+    }
+  },
+  methods:{
+    navigateToPerson(item){
+      this.$router.push(`/person/${item.id}`)
     }
   },
   mounted() {},

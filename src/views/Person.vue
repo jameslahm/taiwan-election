@@ -1,6 +1,6 @@
 <template>
-  <v-container>
-    <v-card>
+  <v-container style="width:100%;left:0;right:0" class="mx-auto">
+    <v-card class="mx-auto mb-5" style="max-height:100%;">
       <v-img
         :src="'/img/'+id+'.svg'"
         aspect-ratio="1.0"

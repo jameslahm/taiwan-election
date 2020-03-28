@@ -10,9 +10,10 @@
       width="80%"
       height="80%"
       class="mx-auto align-center mt-5"
+      :style="{opacity:overlay?0.5:1}"
     >
     </v-img>
-    <v-overlay :value="overlay" absolute opacity="0.8">
+    <v-overlay :value="overlay" absolute>
       <v-avatar
         ref="avatars"
         v-for="(person, index) in persons"

@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container style="min-width:100%;height:100%">
     <v-img
       contain
       src="../assets/2018.svg"

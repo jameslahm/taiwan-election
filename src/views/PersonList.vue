@@ -1,5 +1,5 @@
 <template>
-  <v-list>
+  <v-list style="min-width:100%">
     <v-list-item-group color="primary">
       <v-list-item
         v-for="(item, i) in persons"

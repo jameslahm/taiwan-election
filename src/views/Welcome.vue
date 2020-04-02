@@ -1,11 +1,11 @@
 <template>
-  <v-container style="min-width:100%;height:100%">
+  <v-container class="justify-center">
     <v-img
       contain
       src="../assets/2018.svg"
-      width="50%"
-      height="50%"
-      class="mx-auto align-center mt-5 mb-5"
+      width="30%"
+      height="30%"
+      class="mx-auto"
     >
     </v-img>
     <v-row class="justify-center ">

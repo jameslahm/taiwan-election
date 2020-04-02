@@ -1,12 +1,12 @@
 <template>
 	<!-- <div class="mt-5 pt-5" style="height:10vh"></div> -->
-	<v-container style="height:100%;min-width:100%">
+	<v-container>
 		<Map></Map>
 		<v-container fluid>
 			<!-- <v-row class="justify-space-between mx-auto" style="height:5vh">
         <v-subheader>2014</v-subheader>
         <v-subheader>2020</v-subheader></v-row> -->
-			<v-row class="justify-center pt-5  mx-auto" style="width:75vw"
+			<v-row class="justify-center pt-5  mx-auto"
 				><v-slider
 					class="text-center"
 					thumb-label="always"

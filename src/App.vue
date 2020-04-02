@@ -3,7 +3,7 @@
 		<v-app-bar dark app>
 			<!-- <v-container fluid class="pt-1" style="overflow:hidden;max-height:100%">
         <v-row> -->
-			<v-btn
+			<div
 				class="d-flex-shrink-0"
 				@click="goHome"
 				style="cursor:pointer"
@@ -15,7 +15,7 @@
 					max-width="30"
 				/>
 
-			</v-btn>
+			</div>
 
 			<v-spacer></v-spacer>
 

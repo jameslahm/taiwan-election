@@ -10,10 +10,10 @@
       width="80%"
       height="80%"
       class="mx-auto align-center mt-5"
-      :style="{opacity:overlay?0.5:1}"
+      :class="{mohu:overlay}"
     >
     </v-img>
-    <v-overlay :value="overlay" absolute>
+    <v-overlay :value="overlay" absolute opacity="0">
       <v-avatar
         ref="avatars"
         v-for="(person, index) in persons"
@@ -173,5 +173,9 @@ export default {
 
 .fixed{
   position: fixed;
+}
+
+.mohu{
+  filter: blur(5px);
 }
 </style>

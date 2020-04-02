@@ -3,22 +3,19 @@
 		<v-app-bar dark app>
 			<!-- <v-container fluid class="pt-1" style="overflow:hidden;max-height:100%">
         <v-row> -->
-			<div
-				class="d-flex align-center d-flex-shrink-0"
+			<v-btn
+				class="d-flex-shrink-0"
 				@click="goHome"
 				style="cursor:pointer"
 			>
 				<v-img
 					alt="Vuetify Logo"
-					class="shrink mr-2 rounded"
-					contain
 					src="https://picsum.photos/1080/1080?random"
 					transition="scale-transition"
-					width="30"
-					round
+					max-width="30"
 				/>
 
-			</div>
+			</v-btn>
 
 			<v-spacer></v-spacer>
 

@@ -23,7 +23,7 @@
 			>
 			<p
 				class="white--text primary mx-auto hello px-4 pt-2"
-				style="width:80vw;word-wrap:break-word;margin-top:-0.7010rem"
+				style="width:75vw;word-wrap:break-word;margin-top:-0.7010rem"
 			>
 				哦我是我是哦我是哇的就爱上了暗淡撒旦看来你萨科三第六届立法的撒代码块记得那时空间
 			</p></v-container

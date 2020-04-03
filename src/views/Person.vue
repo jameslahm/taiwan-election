@@ -2,7 +2,7 @@
   <v-container>
     <v-card class="mx-auto mb-5" style="max-height:100%;">
       <v-img
-        :src="'/img/'+id+'.svg'"
+        :src="'/static/'+id+'.svg'"
         aspect-ratio="1.0"
         max-height="15vh"
         contain
@@ -33,7 +33,7 @@
           :key="index"
           style="cursor:pointer;"
           @click="navigateToPerson(item)"
-          ><v-img :src="'/img/'+item.id+'.svg'"></v-img
+          ><v-img :src="'/static/'+item.id+'.svg'"></v-img
         ></v-avatar>
       </v-card-actions>
     </v-card>

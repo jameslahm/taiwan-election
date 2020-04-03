@@ -13,6 +13,7 @@
 					src="https://picsum.photos/1080/1080?random"
 					transition="scale-transition"
 					max-width="30"
+					class="rounded"
 				/>
 
 			</div>

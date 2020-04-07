@@ -2,7 +2,7 @@ import Vuex from 'vuex'
 import Vue from 'vue'
 
 Vue.use(Vuex)
-import data from '../assets/data/data'
+import data from '../assets/data'
 
 const store = new Vuex.Store({
   state: {

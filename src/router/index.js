@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import PersonList from '../views/PersonList.vue'
-import Person from '../views/Person.vue'
-import Welcome from '../views/Welcome.vue'
+const Home=()=>import('../views/Home.vue')
+const PersonList=()=>import('../views/PersonList.vue')
+const Person=()=> import('../views/Person.vue')
+const Welcome=()=>import('../views/Welcome.vue')
 
 Vue.use(VueRouter)
 

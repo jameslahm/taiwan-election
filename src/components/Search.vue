@@ -55,24 +55,9 @@
     mounted () {
     },
     methods: {
-      onEnter(){
-        console.log(this.$store.state.persons,this.search)
-        const res=this.$store.state.persons.filter(v=>{
-          return v.name===this.search
-        })
-        console.log(res)
-        if(res.length===0){
-          // this.$message({
-          //   type:'error',
-          //   message:'No Person'
-          // })
-        }
-        else{
-          this.$router.push(`/person/${res[0].id}`)
-        }
-      },
       onBlur () {
         this.resetSearch()
+        this.$router.back()
       },
       onEsc () {
         this.$refs.search.blur()
@@ -80,7 +65,7 @@
       onFocus () {
         clearTimeout(this.timeout)
         this.isFocused = true
-        if(this.$route.path!='/search') this.$router.push('/search')
+        if(!/search/.test(this.$route.path))this.$router.push('/search')
       },
       resetSearch (timeout = 0) {
         clearTimeout(this.timeout)

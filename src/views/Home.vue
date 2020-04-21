@@ -22,10 +22,13 @@
 				></v-row
 			>
 			<p
-				class="white--text primary mx-auto hello px-4 pt-2"
-				style="width:75vw;word-wrap:break-word;margin-top:-0.7010rem"
+				class="white--text mx-auto hello px-4 pt-2"
+				style="width:75vw;word-wrap:break-word;margin-top:-0.7010rem;background-color:#45463f"
 			>
-				哦我是我是哦我是哇的就爱上了暗淡撒旦看来你萨科三第六届立法的撒代码块记得那时空间
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad est
+				vero sed quidem. Sequi nobis molestias illo aspernatur, quo vel
+				excepturi, omnis possimus quia sint cum repudiandae. Eveniet,
+				possimus. Incidunt?
 			</p></v-container
 		>
 	</v-container>
@@ -39,22 +42,22 @@ export default {
 	name: 'home',
 	data() {
 		return {
-			show: true
+			show: true,
 		}
 	},
 	computed: {
 		year() {
 			return this.$store.state.year
-		}
+		},
 	},
 	components: {
-		Map
+		Map,
 	},
 	methods: {
 		clicked() {
 			console.log('Clicked!')
-		}
-	}
+		},
+	},
 }
 </script>
 
@@ -64,11 +67,10 @@ export default {
 	display: block;
 	border-width: 15px;
 	border-style: solid;
-	border-color: transparent transparent #2196f3 transparent;
+	border-color: transparent transparent #45463f transparent;
 	left: -0.903rem;
 	position: relative;
 	top: -0.1875rem;
 }
-
 
 </style>

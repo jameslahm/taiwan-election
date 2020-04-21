@@ -1,13 +1,11 @@
 <template>
 	<v-app>
 		<v-app-bar dark app>
-			<!-- <v-container fluid class="pt-1" style="overflow:hidden;max-height:100%">
-        <v-row> -->
-			<div
-				class="d-flex-shrink-0"
-				@click="goHome"
-				style="cursor:pointer"
-			>
+			<v-app-bar-nav-icon
+				@click.stop="drawer = !drawer"
+			></v-app-bar-nav-icon>
+
+			<div class="d-flex-shrink-0" @click="goHome" style="cursor:pointer">
 				<v-img
 					alt="Vuetify Logo"
 					src="https://picsum.photos/1080/1080?random"
@@ -15,17 +13,46 @@
 					max-width="30"
 					class="rounded"
 				/>
-
 			</div>
 
 			<v-spacer></v-spacer>
 
 			<Search ref="search"></Search>
-
 		</v-app-bar>
+		<v-navigation-drawer app v-model="drawer" temporary>
+			<v-list>
+				<v-list-item :to="`/`" exact>
+					<v-list-item-icon>
+						<v-icon>mdi-home</v-icon>
+					</v-list-item-icon>
+					<v-list-item-content>
+						首页
+					</v-list-item-content>
+				</v-list-item>
+				<v-list-item  :to="`/home`">
+					<v-list-item-icon>
+						<v-icon>
+							mdi-view-dashboard
+						</v-icon>
+					</v-list-item-icon>
+					<v-list-item-content>
+						选举情况
+					</v-list-item-content>
+				</v-list-item>
+				<v-list-item :to="`/search`">
+					<v-list-item-icon>
+						<v-icon>mdi-account-box</v-icon>
+					</v-list-item-icon>
+					<v-list-item-content>
+						选举人
+					</v-list-item-content>
+				</v-list-item>
+			</v-list>
+		</v-navigation-drawer>
+
 		<v-content>
 			<transition :name="transitionName" mode="out-in">
-				<router-view ></router-view>
+				<router-view></router-view>
 			</transition>
 		</v-content>
 
@@ -43,17 +70,18 @@ export default {
 	data() {
 		return {
 			isDropDown: false,
-			transitionName: 'slide-down'
+			transitionName: 'slide-down',
+			drawer: null,
 		}
 	},
 	computed: {},
 	components: {
-		Search
+		Search,
 	},
 	methods: {
 		goHome() {
 			this.$router.push('/')
-		}
+		},
 	},
 	watch: {
 		$route(to) {
@@ -64,11 +92,11 @@ export default {
 			if (to.path === '/') {
 				this.transitionName = 'slide-down'
 			}
-		}
+		},
 	},
 	created() {
 		this.$vuetify.theme.dark = true
-	}
+	},
 }
 </script>
 

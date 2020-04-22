@@ -2,7 +2,7 @@
   <v-container>
     <v-card class="mx-auto mb-5" style="max-height:100%;">
       <v-img
-        :src="'/static/'+id+'.svg'"
+        :src="'/mobile/static/'+id+'.svg'"
         aspect-ratio="1.0"
         max-height="15vh"
         contain

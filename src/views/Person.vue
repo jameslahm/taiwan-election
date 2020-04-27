@@ -33,7 +33,7 @@
           :key="index"
           style="cursor:pointer;"
           @click="navigateToPerson(item)"
-          ><v-img :src="'/static/'+item.id+'.svg'"></v-img
+          ><v-img :src="'/mobile/static/'+item.id+'.svg'"></v-img
         ></v-avatar>
       </v-card-actions>
     </v-card>

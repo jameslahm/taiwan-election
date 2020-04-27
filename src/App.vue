@@ -3,7 +3,7 @@
 		<v-app-bar dark app>
 			<v-app-bar-nav-icon
 				@click.stop="drawer = !drawer"
-			></v-app-bar-nav-icon>
+			><v-icon>mdi-chevron-left</v-icon></v-app-bar-nav-icon>
 
 			<div class="d-flex-shrink-0" @click="goHome" style="cursor:pointer">
 				<v-img
@@ -85,10 +85,9 @@ export default {
 	},
 	watch: {
 		$route(to) {
-			if (to.path == '/home') {
+			if (to.path === '/home') {
 				this.transitionName = 'slide-up'
 			}
-			console.log(to.path)
 			if (to.path === '/') {
 				this.transitionName = 'slide-down'
 			}

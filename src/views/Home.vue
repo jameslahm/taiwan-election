@@ -6,24 +6,24 @@
 			<!-- <v-row class="justify-space-between mx-auto" style="height:5vh">
         <v-subheader>2014</v-subheader>
         <v-subheader>2020</v-subheader></v-row> -->
-			<v-row class="justify-center pt-5  mx-auto"
+			<v-row class="justify-center pt-5 px-4  mx-auto"
 				><v-slider
-					class="text-center"
 					thumb-label="always"
 					min="2018"
 					max="2020"
 					:thumb-size="55"
-					thumb-color="success"
+					color="#3B9ECF"
+					thumb-color="white"
 					value="2019"
 				>
 					<template v-slot:thumb-label="{ value }">
-						<p class="title mb-0">{{ value }}</p></template
-					></v-slider
-				></v-row
-			>
+						<p class="subtitle-1 black--text mb-0">{{ value }}</p></template
+					>
+				</v-slider>
+			</v-row>
 			<p
-				class="white--text mx-auto hello px-4 pt-2"
-				style="width:75vw;word-wrap:break-word;margin-top:-0.7010rem;background-color:#45463f"
+				class="white--text mx-auto px-5 pt-2"
+				style="word-wrap:break-word;margin-top:-0.7010rem;background-color:#45463f"
 			>
 				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad est
 				vero sed quidem. Sequi nobis molestias illo aspernatur, quo vel
@@ -72,5 +72,4 @@ export default {
 	position: relative;
 	top: -0.1875rem;
 }
-
 </style>

@@ -4,7 +4,7 @@
       <v-list-item
         v-for="(item, i) in persons"
         :key="i"
-        @click="navigateToPerson(i)"
+        :to="`/person/${i}`"
       >
         <v-list-item-avatar>
             <v-img :src="`/mobile/static/${item.id}.svg`"></v-img>
@@ -19,11 +19,6 @@
 
 <script>
 export default {
-  methods: {
-    navigateToPerson(index) {
-      this.$router.push(`/person/${index}`)
-    }
-  },
   computed:{
     persons(){
       return this.$store.getters.persons

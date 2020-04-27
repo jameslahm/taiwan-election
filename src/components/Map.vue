@@ -13,7 +13,7 @@
       :class="{mohu:overlay}"
     >
     </v-img>
-    <v-overlay :value="overlay" absolute opacity="0">
+    <v-overlay :value="overlay" absolute opacity="0" style="left:0;right:0;top:0;">
       <v-avatar
         ref="avatars"
         v-for="(person, index) in persons"
@@ -155,7 +155,7 @@ export default {
   },
   created() {
     for(let index=0;index<3;index++){
-      const x = 20 + (index % 2) * 30
+      const x = 20 + (index % 2) * 40
       const y =
         20 +
         Math.floor((index / 2) % 1 == 0.5 ? index / 2 - 0.5 : index / 2) * 20
@@ -177,5 +177,9 @@ export default {
 
 .mohu{
   filter: blur(5px);
+}
+
+.absolute{
+  position: absolute;
 }
 </style>

@@ -17,7 +17,9 @@
 					value="2019"
 				>
 					<template v-slot:thumb-label="{ value }">
-						<p class="subtitle-1 black--text mb-0">{{ value }}</p></template
+						<p class="subtitle-1 black--text mb-0">
+							{{ value }}
+						</p></template
 					>
 				</v-slider>
 			</v-row>
@@ -25,10 +27,8 @@
 				class="white--text mx-auto px-5 pt-2"
 				style="word-wrap:break-word;margin-top:-0.7010rem;background-color:#45463f"
 			>
-				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad est
-				vero sed quidem. Sequi nobis molestias illo aspernatur, quo vel
-				excepturi, omnis possimus quia sint cum repudiandae. Eveniet,
-				possimus. Incidunt?
+				2020年1月11日台湾地区领导人选举投票，民进党候选人蔡英文、赖清德当选台湾地区正、副领导人，得票817万余张，得票率为57.1%
+				。得票第二的中国国民党候选人韩国瑜于晚间承认败选。
 			</p></v-container
 		>
 	</v-container>

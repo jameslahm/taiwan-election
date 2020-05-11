@@ -12,10 +12,7 @@
 			<p class="headline">海峡两岸一线牵</p>
 		</v-row>
 		<p class="text-left mx-auto" style="width:80vw;">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-			voluptate incidunt, harum voluptatem asperiores repellendus, iste
-			eius, facilis exercitationem eligendi ad deserunt optio magni? In
-			expedita aliquam consequatur. Culpa, molestias.
+			历年来台湾地区的选举之争都是两岸人民热烈讨论的话题，我们意图通过交互设计使得人们可以快速地了解各个候选人之间的主张政策以及历年选举后各党的版图变化。
 		</p>
 		<v-row class="justify-center mt-5">
 			<v-avatar

@@ -29,6 +29,7 @@
 <script>
 import PersonList from './PersonList'
 
+
 export default {
 	name: 'Search',
   components:{

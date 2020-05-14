@@ -3,8 +3,8 @@
 		<v-img
 			contain
 			src="../assets/2018.svg"
-			width="30%"
-			height="30%"
+			width="60%"
+			height="50%"
 			class="mx-auto"
 		>
 		</v-img>

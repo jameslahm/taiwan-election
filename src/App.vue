@@ -1,11 +1,15 @@
 <template>
 	<v-app>
 		<v-app-bar dark app>
-			<v-app-bar-nav-icon
-				@click.stop="drawer = !drawer"
-			><v-icon>mdi-chevron-left</v-icon></v-app-bar-nav-icon>
+			<v-app-bar-nav-icon @click.stop="drawer = !drawer"
+				><v-icon>mdi-chevron-left</v-icon></v-app-bar-nav-icon
+			>
 
-			<div class="d-flex-shrink-0" @click.stop="drawer=!drawer" style="cursor:pointer">
+			<div
+				class="d-flex-shrink-0"
+				@click.stop="drawer = !drawer"
+				style="cursor:pointer"
+			>
 				返回
 			</div>
 
@@ -23,7 +27,7 @@
 						首页
 					</v-list-item-content>
 				</v-list-item>
-				<v-list-item  :to="`/home`">
+				<v-list-item :to="`/home`">
 					<v-list-item-icon>
 						<v-icon>
 							mdi-view-dashboard
@@ -46,7 +50,9 @@
 
 		<v-content>
 			<transition :name="transitionName" mode="out-in">
-				<router-view></router-view>
+				<keep-alive>
+					<router-view></router-view>
+				</keep-alive>
 			</transition>
 		</v-content>
 
@@ -59,14 +65,14 @@
 </template>
 
 <script>
-import Search from './components/Search'
+import Search from './components/Search';
 export default {
 	data() {
 		return {
 			isDropDown: false,
 			transitionName: 'slide-down',
 			drawer: null,
-		}
+		};
 	},
 	computed: {},
 	components: {
@@ -74,23 +80,23 @@ export default {
 	},
 	methods: {
 		goHome() {
-			this.$router.push('/')
+			this.$router.push('/');
 		},
 	},
 	watch: {
 		$route(to) {
 			if (to.path === '/home') {
-				this.transitionName = 'slide-up'
+				this.transitionName = 'slide-up';
 			}
 			if (to.path === '/') {
-				this.transitionName = 'slide-down'
+				this.transitionName = 'slide-down';
 			}
 		},
 	},
 	created() {
-		this.$vuetify.theme.dark = true
+		this.$vuetify.theme.dark = true;
 	},
-}
+};
 </script>
 
 <style lang="scss">

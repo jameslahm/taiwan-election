@@ -3,7 +3,7 @@
 		<v-img
 			contain
 			src="../assets/2018.svg"
-			width="60%"
+			:width="$vuetify.breakpoint.smAndDown?`60%`:`30%`"
 			height="50%"
 			class="mx-auto"
 		>

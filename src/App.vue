@@ -33,7 +33,7 @@
 						选举情况
 					</v-list-item-content>
 				</v-list-item>
-				<v-list-item :to="`/search`">
+				<v-list-item :to="`/person/0`">
 					<v-list-item-icon>
 						<v-icon>mdi-account-box</v-icon>
 					</v-list-item-icon>

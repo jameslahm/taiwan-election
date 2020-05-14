@@ -24,7 +24,7 @@
         style="cursor:pointer;position:fixed"
         size="62"
       >
-        <img :src="'/mobile/static/'+person.id+'.svg'" />
+        <img :src="'/static/'+person.id+'.svg'" />
       </v-avatar>
       <p class="fixed" v-for="(person,index) in persons" :key="'p'+index" :style="{ left: locations[index].x +0.5+ 'vw', top: locations[index].y+9 + 'vh' }">
         {{person.name}}

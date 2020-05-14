@@ -5,14 +5,8 @@
 				@click.stop="drawer = !drawer"
 			><v-icon>mdi-chevron-left</v-icon></v-app-bar-nav-icon>
 
-			<div class="d-flex-shrink-0" @click="goHome" style="cursor:pointer">
-				<v-img
-					alt="Vuetify Logo"
-					src="https://picsum.photos/1080/1080?random"
-					transition="scale-transition"
-					max-width="30"
-					class="rounded"
-				/>
+			<div class="d-flex-shrink-0" @click.stop="drawer=!drawer" style="cursor:pointer">
+				返回
 			</div>
 
 			<v-spacer></v-spacer>

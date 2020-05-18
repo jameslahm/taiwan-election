@@ -58,7 +58,7 @@
 
 		<v-footer app absolute
 			><p class="text-center mx-auto mb-0">
-				copyright 2020 海峡两岸
+				海峡两岸
 			</p></v-footer
 		>
 	</v-app>

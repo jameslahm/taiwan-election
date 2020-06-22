@@ -9,12 +9,12 @@
 			<v-row class="justify-center pt-5 px-4  mx-auto"
 				><v-slider
 					thumb-label="always"
-					min="2018"
-					max="2020"
+					min="2019"
+					max="2021"
 					:thumb-size="55"
 					color="#3B9ECF"
 					thumb-color="white"
-					value="2019"
+					value="2020"
 				>
 					<template v-slot:thumb-label="{ value }">
 						<p class="subtitle-1 black--text mb-0">

@@ -15,6 +15,7 @@
 					color="#3B9ECF"
 					thumb-color="white"
 					value="2020"
+					readonly=""
 				>
 					<template v-slot:thumb-label="{ value }">
 						<p class="subtitle-1 black--text mb-0">
